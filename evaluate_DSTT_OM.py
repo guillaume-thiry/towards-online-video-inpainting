@@ -36,7 +36,7 @@ from scipy import linalg
 parser = argparse.ArgumentParser(description='DSTT_OM')
 parser.add_argument("--video", type=str, required=True)
 parser.add_argument("--mask", type=str, required=True)
-parser.add_argument("--ckpt", type=str, default='checkpoints/dstt.pth')
+parser.add_argument("--ckpt", type=str, default='checkpoints/DSTT.pth')
 parser.add_argument("--width", type=int, default=432)
 parser.add_argument("--height", type=int, default=240)
 parser.add_argument("--ref_step", type=int, default=10)

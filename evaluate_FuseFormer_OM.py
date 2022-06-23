@@ -36,7 +36,7 @@ from scipy import linalg
 parser = argparse.ArgumentParser(description='FuseFormer_OM')
 parser.add_argument("--video", type=str, required=True)
 parser.add_argument("--mask", type=str, required=True)
-parser.add_argument("--ckpt", type=str, default='checkpoints/fuseformer.pth')
+parser.add_argument("--ckpt", type=str, default='checkpoints/FuseFormer.pth')
 parser.add_argument("--width", type=int, default=432)
 parser.add_argument("--height", type=int, default=240)
 parser.add_argument("--ref_step", type=int, default=10)

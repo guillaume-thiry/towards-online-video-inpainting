@@ -36,7 +36,7 @@ from scipy import linalg
 parser = argparse.ArgumentParser(description='E2FGVI_OM')
 parser.add_argument("--video", type=str, required=True)
 parser.add_argument("--mask", type=str, required=True)
-parser.add_argument("--ckpt", type=str, default='checkpoints/e2fgvi.pth')
+parser.add_argument("--ckpt", type=str, default='checkpoints/E2FGVI.pth')
 parser.add_argument("--width", type=int, default=432)
 parser.add_argument("--height", type=int, default=240)
 parser.add_argument("--ref_step", type=int, default=10)

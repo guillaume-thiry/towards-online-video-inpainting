@@ -56,6 +56,14 @@ data
 
 ### DAVIS and YouTube-VOS datasets
 
+To reproduce the results of the paper on DAVIS and YouTube-VOS, download the datasets following these instructions:
+
+- DAVIS dataset available [here](https://davischallenge.org/davis2017/code.html) (Semi-supervised TrainVal - 90 videos)
+- YouTube-VOS available [here](https://competitions.codalab.org/competitions/20127) (test_all_frames - 541 videos)
+
+Note: For YouTube-VOS, you will need to rename the files so that each video starts at 00000.jpg (to match the masks).
+
+For the masks, we extended the set created by [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) to include more DAVIS videos (from 50 to 90). There are available [here](...).
 
 
 ## Usage

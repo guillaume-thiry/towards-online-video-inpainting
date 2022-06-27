@@ -40,11 +40,11 @@ data
             ...
         |Masks
             |bear
-                |00000.jpg
-                |00001.jpg
+                |00000.png
+                |00001.png
                 ...
             |blackswan
-                |00000.jpg
+                |00000.png
                 ...
             ...
     |YTVOS
@@ -68,22 +68,24 @@ For the masks, we extended the set created by [FuseFormer](https://github.com/ru
 
 ## Usage
 
+### Commands
+
 You can easily run any online inpainting script with the command:
 
 ```
 python evaluate_[backbone]_[model].py --ckpt checkpoints/[backbone].pth --video data/DAVIS/JPEGImages --mask data/DAVIS/Masks --evaluate --save_results
 ```
-- [backbone] is the name of the original inpainting algorithm: DSTT / FuseFormer / E2FGVI
-- [model] is the name of the online inpainting pipeline to use: O (Online) / OM (Online-Memory) / OMR (Online-Memory-Refinement)
-- --video is the path of the corrupted images (see Data Organization)
-- --mask is the path of the masks for these images
-- --evaluate means that the script will evaluate the inpaintings on different metrics (PSNR/SSIM/VFID)
-- --save_results means that the inpaintings will be saved (as a folder of images)
+- *[backbone]* is the name of the original inpainting algorithm: DSTT / FuseFormer / E2FGVI
+- *[model]* is the name of the online inpainting pipeline to use: O (Online) / OM (Online-Memory) / OMR (Online-Memory-Refinement)
+- *--video* is the path of the corrupted images (see Data Organization)
+- *--mask* is the path of the masks for these images
+- *--evaluate* means that the script will evaluate the inpaintings on different metrics (PSNR/SSIM/VFID)
+- *--save_results* means that the inpaintings will be saved (as a folder of images)
 
 Other parameters can be added to the command:
-- --save_folder to specify where to save the resulting inpaintings
-- --num_neighbors to specify the number of neighboring frames to use for the prediction
-- --ref_step and --num_refs to specify the number and frequency of the reference frames for the prediction
+- *--save_folder* to specify where to save the resulting inpaintings
+- *--num_neighbors* to specify the number of neighboring frames to use for the prediction
+- *--ref_step* and *--num_refs* to specify the number and frequency of the reference frames for the prediction
 
 Examples:
 ```
@@ -91,3 +93,9 @@ python evaluate_DSTT_O.py --ckpt checkpoints/DSTT.pth --video data/DAVIS/JPEGIma
 python evaluate_E2FGVI_OM.py --ckpt checkpoints/E2FGVI.pth --video data/YTVOS/JPEGImages --mask data/YTVOS/Masks --save_results
 python evaluate_FuseFormer_OMR.py --ckpt checkpoints/FuseFormer.pth --video data/my_dataset/Images --mask data/my_dataset/Masks 
 ```
+
+### Metrics
+
+To easily obtain the average PSNR, SSIM, and VFID of the videos, just add the argument *--evaluate* in the commands above. 
+
+To evaluate the warping error (Ewarp), you will first need to save the inpaited frames using the argument *--save_results* in the commands. The metric can then be calculated following instructions from [video-inpainting-evaluation](https://github.com/MichiganCOG/video-inpainting-evaluation/tree/public) to retrieve the values given in the paper. Another possibility is to follow [fast-blind-video-consistency](https://github.com/phoenix104104/fast_blind_video_consistency) but the results may differ from the paper as they depend on the way to calculate the flows.

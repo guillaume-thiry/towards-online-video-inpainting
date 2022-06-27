@@ -2,15 +2,19 @@
 
 ## Introduction
 
+[To be done]
+
 ## Install
 
 ### Packages environment
 
+[To be done]
+
 ### Data organization
 
-You will need to add two folders to be able to run the scripts: checkpoints and data
+You will need to add two folders to be able to run the scripts: 'checkpoints' and 'data'.
 
-First, create the folders
+First, create the folders:
 ```
 mkdir checkpoints
 mkdir data
@@ -63,7 +67,7 @@ To reproduce the results of the paper on DAVIS and YouTube-VOS, download the dat
 
 Note: For YouTube-VOS, you will need to rename the files so that each video starts at 00000.jpg (to match the masks).
 
-For the masks, we extended the set created by [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) to include more DAVIS videos (from 50 to 90). There are available [here](https://drive.google.com/drive/folders/1n1Rg4L5TZnoz1Vjk_EC_TgSrs18m_vNU?usp=sharing).
+For the masks, we extended the set created by [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) to include more DAVIS videos (from 50 to 90). They are available [here](https://drive.google.com/drive/folders/1n1Rg4L5TZnoz1Vjk_EC_TgSrs18m_vNU?usp=sharing).
 
 
 ## Usage
@@ -99,3 +103,15 @@ python evaluate_FuseFormer_OMR.py --ckpt checkpoints/FuseFormer.pth --video data
 To easily obtain the average PSNR, SSIM, and VFID of the videos, just add the argument *--evaluate* in the commands above. 
 
 To evaluate the warping error (Ewarp), you will first need to save the inpaited frames using the argument *--save_results* in the commands. The metric can then be calculated following instructions from [video-inpainting-evaluation](https://github.com/MichiganCOG/video-inpainting-evaluation/tree/public) to retrieve the values given in the paper. Another possibility is to follow [fast-blind-video-consistency](https://github.com/phoenix104104/fast_blind_video_consistency) but the results may differ from the paper as they depend on the way to calculate the flows.
+
+## Citing this work
+
+[To be done]
+
+## Acknowledgement
+
+Our work is built upon three existing video inpainting models: **DSTT**, **FuseFormer** and **E2FGVI**. In particular, our code shares a lot with these existing works.
+
+- [DSTT](https://github.com/ruiliu-ai/DSTT) (Liu et al. 2021)
+- [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) (Liu et al. 2021)
+- [E2FGVI](https://github.com/MCG-NKU/E2FGVI) (Li et al. 2022)

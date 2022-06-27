@@ -63,7 +63,7 @@ To reproduce the results of the paper on DAVIS and YouTube-VOS, download the dat
 
 Note: For YouTube-VOS, you will need to rename the files so that each video starts at 00000.jpg (to match the masks).
 
-For the masks, we extended the set created by [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) to include more DAVIS videos (from 50 to 90). There are available [here](...).
+For the masks, we extended the set created by [FuseFormer](https://github.com/ruiliu-ai/FuseFormer) to include more DAVIS videos (from 50 to 90). There are available [here](https://drive.google.com/drive/folders/1n1Rg4L5TZnoz1Vjk_EC_TgSrs18m_vNU?usp=sharing).
 
 
 ## Usage

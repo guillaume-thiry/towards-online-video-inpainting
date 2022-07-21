@@ -8,7 +8,18 @@
 
 ### Packages environment
 
-[To be done]
+The Conda environment can easily be installed using the file *env.yml*:
+
+```
+conda env create --file env.yml
+conda activate online-inpainting
+```
+
+This environement is very close to the one provided in [E2FGVI](https://github.com/MCG-NKU/E2FGVI):
+
+- Python $\ge$ 3.7
+- Torch $\ge$ 1.5
+- CUDA $\ge$ 10.1
 
 ### Data organization
 
